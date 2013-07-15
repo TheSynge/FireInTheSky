@@ -13,8 +13,9 @@ public class WeaponPickup : MonoBehaviour {
 	
 	}
 	
-	// Add code to remove trigger once picked up
-	// Add code todrop item and add trigger back to object when player hits button todrop item (add it to update).
+	// Add code to prevent players running up to player and grabbing their weapon.
+	// There is a potential for another player to run up to a player and hit the pickup weapon button and snatch it out of their hands.
+	// Not sure how unity handels scope of code attached to objects and multilpe instances of same object type.
 	
 	void OnTriggerStay(Collider other) {
 		if (other.gameObject.name == "First Person Controller" && Input.GetKeyDown ("e")) {
@@ -23,6 +24,7 @@ public class WeaponPickup : MonoBehaviour {
 			
 			gameObject.transform.localPosition = WeaponMount.localPosition;
 			gameObject.transform.localEulerAngles = WeaponMount.localEulerAngles;
+			gameObject.rigidbody.isKinematic = true;
 			print ("I want to pick up the weapon.");	
 		}
 		
