@@ -13,7 +13,7 @@ public class MainMenu : MonoBehaviour
         // Make the first button. If it is pressed, Application.Loadlevel (1) will be executed
         if (GUI.Button(new Rect(20, 40, 80, 20), "New Game"))
         {
-            Application.LoadLevel("LunarSurfaceArea1");
+            Application.LoadLevel("DevSandBox");
         }
 
         // Make the second button.
