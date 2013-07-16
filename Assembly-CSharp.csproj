@@ -5,7 +5,7 @@
 	<Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
 	<ProductVersion>10.0.20506</ProductVersion>
 	<SchemaVersion>2.0</SchemaVersion>
-	<ProjectGuid>{DDFBC18F-9396-3137-9CFE-DEB2CDB74636}</ProjectGuid>
+	<ProjectGuid>{314317D5-865F-C202-255F-685F18E2C44E}</ProjectGuid>
 	<OutputType>Library</OutputType>
 	<AppDesignerFolder>Properties</AppDesignerFolder>
 	<RootNamespace></RootNamespace>
@@ -37,17 +37,19 @@
     <Reference Include="System.XML" />
 	<Reference Include="System.Core" />
 	<Reference Include="UnityEngine">
-	  <HintPath>E:/unity/Data/Managed/UnityEngine.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEngine.dll</HintPath>
 	</Reference>
 	<Reference Include="UnityEditor">
-	  <HintPath>E:/unity/Data/Managed/UnityEditor.dll</HintPath>
+	  <HintPath>C:/Program Files (x86)/Unity/Editor/Data/Managed/UnityEditor.dll</HintPath>
 	</Reference>
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\Crosshair.cs" />
      <Compile Include="Assets\HideCursor.cs" />
+     <Compile Include="Assets\Scripts\FireProjectileWeapon.cs" />
      <Compile Include="Assets\Scripts\MainMenu.cs" />
      <Compile Include="Assets\Scripts\MouseLook.cs" />
+     <Compile Include="Assets\Scripts\ProjectileScript.cs" />
      <Compile Include="Assets\Scripts\WeaponPickup.cs" />
      <Compile Include="Assets\_bin\Standard Assets\Scripts\General Scripts\ActivateTrigger.cs" />
      <Compile Include="Assets\_bin\Standard Assets\Scripts\Utility Scripts\CombineChildren.cs" />
