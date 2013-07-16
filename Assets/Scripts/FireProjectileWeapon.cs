@@ -7,36 +7,40 @@ public class FireProjectileWeapon : MonoBehaviour {
 	public GameObject projPrefab;
 	public float rateOfFire;
 	public float inaccuracy;
+	public bool isEquiped;
 	
 	private float fireTimer;
 	
 	// Use this for initialization
 	void Start () {
 		fireTimer = Time.time + rateOfFire;
+		isEquiped = false;
 	}
 	
 	// Update is called once per frame
 	void Update () {
-		//Debug.DrawLine(transform.position, transform.position + transform.forward, Color.red);
+		if (isEquiped && Input.GetMouseButtonDown(0)) {
+			//Debug.DrawLine(transform.position, transform.position + transform.forward, Color.red);
 		
-		if (Time.time > fireTimer) {
-
-            GameObject projectile;
-			Vector3 muzzlevelocity = transform.forward;
-
-			if (inaccuracy != 0) {
-
-                Vector2 rand    = Random.insideUnitCircle;
-				muzzlevelocity += new Vector3(rand.x, rand.y, 0) * inaccuracy;
-
-            }
-
- 			muzzlevelocity = muzzlevelocity.normalized * projVelocity;
-            projectile = Instantiate(projPrefab, transform.position, transform.rotation) as GameObject;
-            projectile.GetComponent<ProjectileScript>().muzzleVelocity = muzzlevelocity;
-            fireTimer = Time.time + rateOfFire;
-        } else {	
-			return;
+			if (Time.time > fireTimer) {
+	
+	            GameObject projectile;
+				Vector3 muzzlevelocity = transform.forward;
+	
+				if (inaccuracy != 0) {
+	
+	                Vector2 rand    = Random.insideUnitCircle;
+					muzzlevelocity += new Vector3(rand.x, rand.y, 0) * inaccuracy;
+	
+	            }
+	
+	 			muzzlevelocity = muzzlevelocity.normalized * projVelocity;
+	            projectile = Instantiate(projPrefab, transform.position, transform.rotation) as GameObject;
+	            projectile.GetComponent<ProjectileScript>().muzzleVelocity = muzzlevelocity;
+	            fireTimer = Time.time + rateOfFire;
+	        } else {	
+				return;
+			}
 		}
 	}//void Update() {}		
 }

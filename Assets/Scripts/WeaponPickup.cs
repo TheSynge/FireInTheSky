@@ -25,12 +25,18 @@ public class WeaponPickup : MonoBehaviour {
 			gameObject.transform.localPosition = WeaponMount.localPosition;
 			gameObject.transform.localEulerAngles = WeaponMount.localEulerAngles;
 			gameObject.rigidbody.isKinematic = true;
+			
+			gameObject.GetComponent<FireProjectileWeapon>().isEquiped = true;
+			
 			print ("I want to pick up the weapon.");	
 		}
 		
 		//This drops the object
 		if (other.gameObject.name == "First Person Controller" && Input.GetKeyDown ("f")) {
 			gameObject.transform.parent = null;
+			gameObject.rigidbody.isKinematic = false;
+			
+			gameObject.GetComponent<FireProjectileWeapon>().isEquiped = false;
 		}	
 	}
 }
